@@ -1,152 +1,257 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextStop - Home</title>
+    <title>TripAdvisor Clone</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    
-    <section id="section-1">
-        <div class="container1">
-            <header>
+<nav>
 
-                <img id="logo" src="images/NextStop_logo.png">
+    <div class="logo">
+        NextStop
+    </div>
 
-                <nav class="nav">
-                    <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li class="active"><a href="about.html">About Us</a></li>
-                        <li class="active"><a href="reviews.html">Reviews</a></li>
-                        <li class="active"><a href="contact.html">Contact Info</a></li>
-                    </ul>
-                </nav>
-            </header>>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+    </ul>
 
-            <!--<div class="main-heading"></div>-->
-                <h1 class="main-heading">Discover, plan, and experience your next adventure with NextStop.</h1>
+</nav>
 
-        </div>
-    </section>
+    <section class="hero" id="home">
+        <h1>Discover Your Next Adventure</h1>
+        <p>Find the perfect destination around the world.</p>
 
+        <div class="trip-bar">
 
-    <section id="section-2">
+            <select>
+                <option>Who is going?</option>
+                <option>Solo</option>
+                <option>Couple</option>
+                <option>Family</option>
+                <option>Friends</option>
+            </select>
 
-        <div class="container2">
-            <div class="title-box">
+            <select>
+                <option>Where are you going?</option>
+                <option>Dubai</option>
+                <option>Rome</option>
+                <option>New York</option>
+                <option>Tokyo</option>
+                <option>Berlin</option>
+                <option>London</option>
+                <option>Cairo</option>
+                <option>Barcelona</option>
+                <option>Beijing</option>
+                <option>Istanbul</option>
+                <option>Paris</option>
+                <option>Rio de Janeiro</option>
+                <option>Sydney</option>
+                <option>Vienna</option>
+            </select>
 
-                <h2>Travel Destinations</h2>
+            <select>
+                <option>When are you going?</option>
+                <option>Spring</option>
+                <option>Summer</option>
+                <option>Autumn</option>
+                <option>Winter</option>
+            </select>
 
-            <div class="line"></div>                
-
-            </div>
-        </div>
-
-            <div class="desti-box">
-                <div class="desti">
-                    <h2>Dubai</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>Turkey</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>Great Britain</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>USA</h2>
-                </div>
-            </div>
-
-        </div>
-
-            <div class="desti-box2">
-                <div class="desti">
-                    <h2>France</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>Brasil</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>Italy</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>Switzerland</h2>
-                </div>
-            </div>
-
-
-            <div class="desti-box3">
-                <div class="desti">
-                    <h2>Japan</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>Austria</h2>
-                </div>
-
-                <div class="desti">
-                    <h2>Spain</h2>
-                </div>
-
-
-                <div class="desti">
-                    <h2>South Korea</h2>
+            <button id="searchBtn">Search</button>
 
         </div>
     </section>
 
+    <section class="destinations">
 
-    <section id="section-3">
+        <h2>Popular Destinations</h2>
 
-<<<<<<< HEAD
-        <div class="container3">
-            <div class="title-box">
-               <a href="perfkits.html">DON'T MISS OUT</a>
+        <div class="cards">
+
+            <div class="card">
+                <img src="images/dubai.jpg" alt="Dubai">
+                <h3>Dubai</h3>
+                <p>5 Days</p>
+                <p>$1,200</p>
+                <span>⭐ 4.8</span>
+            </div>
+
+            <div class="card">
+                <img src="images/rome.jpg" alt="Rome">
+                <h3>Rome</h3>
+                <p>4 Days</p>
+                <p>$850</p>
+                <span>⭐ 4.7</span>
+            </div>
+
+            <div class="card">
+                <img src="images/new-york.jpg" alt="New York">
+                <h3>New York</h3>
+                <p>6 Days</p>
+                <p>$1,450</p>
+                <span>⭐ 4.9</span>
+            </div>
+
+            <div class="card">
+                <img src="images/tokyo.jpg" alt="Tokyo">
+                <h3>Tokyo</h3>
+                <p>7 Days</p>
+                <p>$1,900</p>
+                <span>⭐ 4.9</span>
+            </div>
+
+            <div class="card">
+                <img src="images/berlin.jpg" alt="Berlin">
+                <h3>Berlin</h3>
+                <p>4 Days</p>
+                <p>$900</p>
+                <span>⭐ 4.6</span>
+            </div>
+
+            <div class="card">
+                <img src="images/london.jpg" alt="London">
+                <h3>London</h3>
+                <p>5 Days</p>
+                <p>$1,300</p>
+                <span>⭐ 4.8</span>
+            </div>
+
+            <div class="card">
+                <img src="images/cairo.jpg" alt="Cairo">
+                <h3>Cairo</h3>
+                <p>4 Days</p>
+                <p>$700</p>
+                <span>⭐ 4.5</span>
+            </div>
+
+            <div class="card">
+                <img src="images/barcelona.jpg" alt="Barcelona">
+                <h3>Barcelona</h3>
+                <p>5 Days</p>
+                <p>$950</p>
+                <span>⭐ 4.8</span>
+            </div>
+
+            <div class="card">
+                <img src="images/beijing.jpg" alt="Beijing">
+                <h3>Beijing</h3>
+                <p>6 Days</p>
+                <p>$1,500</p>
+                <span>⭐ 4.7</span>
+            </div>
+
+            <div class="card">
+                <img src="images/istanbul.jpg" alt="Istanbul">
+                <h3>Istanbul</h3>
+                <p>5 Days</p>
+                <p>$850</p>
+                <span>⭐ 4.7</span>
+            </div>
+
+            <div class="card">
+                <img src="images/paris.jpg" alt="Paris">
+                <h3>Paris</h3>
+                <p>5 Days</p>
+                <p>$1,250</p>
+                <span>⭐ 4.9</span>
+            </div>
+
+            <div class="card">
+                <img src="images/rio-de-janeiro.jpg" alt="Rio de Janeiro">
+                <h3>Rio de Janeiro</h3>
+                <p>6 Days</p>
+                <p>$1,100</p>
+                <span>⭐ 4.8</span>
+            </div>
+
+            <div class="card">
+                <img src="images/sydney.jpg" alt="Sydney">
+                <h3>Sydney</h3>
+                <p>7 Days</p>
+                <p>$2,100</p>
+                <span>⭐ 4.9</span>
+            </div>
+
+            <div class="card">
+                <img src="images/vienna.jpg" alt="Vienna">
+                <h3>Vienna</h3>
+                <p>4 Days</p>
+                <p>$900</p>
+                <span>⭐ 4.7</span>
             </div>
 
         </div>
-=======
-        
->>>>>>> 5af9c7ca0dcdf514f3ac93b689a873828d9da0c8
-
     </section>
 
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            We help travelers discover amazing destinations,
+            compare prices, and plan unforgettable journeys.
+        </p>
+    </section>
 
-    
+    <section id="reviews">
+        <h2>Traveler Reviews</h2>
+        <div class="review-box">
+            ⭐⭐⭐⭐⭐ "Amazing experience!"
+        </div>
+        <div class="review-box">
+            ⭐⭐⭐⭐⭐ "Easy and fast booking."
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact / Report Issue</h2>
+        <p>Email: support@tripexplorer.com</p>
+    </section>
+
     <footer>
 
-        <div class="container4">
-            <div class="footer-links">
+    <div class="footer-content">
 
-                <ul>
-                    <li><a href="https://www.facebook.com/">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/?hl=en">Instagram</a></li>
-                    <li><a href="https://www.tiktok.com/en/">TikTok</a></li>
-                    <li><a href="https://www.twitter.new/">Twitter</a></li>
-                    <li><a href="https://al.linkedin.com/">Linkedin</a></li>
-                    <li><a href="https://www.threads.com/?hl=en">Threads</a></li>
-                    <li><a href="https://www.google.com/">Google</a></li>
-                    <li><a href="https://github.com/">Github</a></li>
-                </ul>
-
-                <h3>© 2026 NextStop.  All rights reserved.</h3>
-                
-            </div>
+        <div>
+            <h3>NextStop</h3>
+            <p>
+                Discover amazing destinations and plan
+                your perfect journey.
+            </p>
         </div>
 
-    </footer>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="report.html">Report Issue</a>
+        </div>
 
 
+        <div>
+            <h3>Contact</h3>
+            <p>Email: support@nextstop.com</p>
+            <p>Phone: +383 44 000 000</p>
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 NextStop. All Rights Reserved.
+    </div>
+
+
+</footer>
 
     <script src="main.js"></script>
-    
 </body>
 </html>
