@@ -1,213 +1,362 @@
-window.onload = function(){
-
+window.onload = function () {
     console.log("Welcome to NextStop!");
-
 };
 
 const searchBtn = document.getElementById("searchBtn");
 
+if (searchBtn) {
 
-if(searchBtn){
+    searchBtn.addEventListener("click", function () {
 
-searchBtn.addEventListener("click", function(){
+        const person =
+            document.getElementById("personSelect").value;
 
-    let selects = document.querySelectorAll("select");
+        const destination =
+            document.getElementById("destinationSelect").value;
 
-    let person = selects[0].value;
-    let destination = selects[1].value;
-    let season = selects[2].value;
+        const season =
+            document.getElementById("seasonSelect").value;
 
+        if (
+            person === "Who is going?" ||
+            destination === "Where are you going?" ||
+            season === "When are you going?"
+        ) {
 
-    if(
-        person === "Who is going?" ||
-        destination === "Where are you going?" ||
-        season === "When are you going?"
-    ){
-
-        alert("Please select all travel options!");
-
-    }
-
-    else{
-
-        alert(
-        `Perfect! Your ${season} trip to ${destination} for ${person} is ready!`
-        );
-
-    }
-
-
-});
-
-}
-
-let cards = document.querySelectorAll(".card");
-
-
-cards.forEach(function(card){
-
-
-    card.addEventListener("click",function(){
-
-
-        let place =
-        card.querySelector("h3").innerText;
-
-
-        let price =
-        card.querySelectorAll("p")[1].innerText;
-
-
-        alert(
-        `🌍 ${place}\n\nPackage price: ${price}\n\nEnjoy your NextStop adventure!`
-        );
-
-
-    });
-
-
-});
-
-let links = document.querySelectorAll("nav a");
-
-
-links.forEach(function(link){
-
-
-    link.addEventListener("click",function(e){
-
-
-        let target =
-        this.getAttribute("href");
-
-
-        if(target.startsWith("#")){
-
-
-            e.preventDefault();
-
-
-            document.querySelector(target)
-            .scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
+            alert("Please select all travel options!");
+            return;
 
         }
 
+        const cards =
+            document.querySelectorAll(".card");
+
+        let count = 0;
+
+        cards.forEach(function (card) {
+
+            const city =
+                card.dataset.city;
+
+if (
+    destination === "All Destinations" ||
+    city === destination
+) {
+
+    card.style.display = "";
+    count++;
+
+} else {
+
+    card.style.display = "none";
+
+}
+
+        });
+
+        const resultCount =
+            document.getElementById("resultCount");
+
+        if (resultCount) {
+
+            resultCount.textContent =
+                count + " trips found";
+
+        }
+
+        alert(
+            `Perfect! Your ${season} trip to ${destination} for ${person} is ready!`
+        );
 
     });
 
+}
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(function (card) {
+
+    card.addEventListener("click", function () {
+
+        const place =
+            card.querySelector("h3").innerText;
+
+        const price =
+            card.querySelectorAll("p")[1].innerText;
+
+        alert(
+            `🌍 ${place}\n\nPackage Price: ${price}\n\nEnjoy your NextStop adventure!`
+        );
+
+    });
 
 });
 
-window.addEventListener("scroll",function(){
+cards.forEach(function (card) {
 
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "0.5s ease";
 
-cards.forEach(function(card){
+});
 
+window.addEventListener("scroll", function () {
 
-let position =
-card.getBoundingClientRect().top;
+    cards.forEach(function (card) {
 
+        const position =
+            card.getBoundingClientRect().top;
 
-let screen =
-window.innerHeight;
+        const screenHeight =
+            window.innerHeight;
 
+        if (position < screenHeight - 100) {
 
-if(position < screen - 100){
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
 
+        }
 
-card.style.opacity="1";
-card.style.transform="translateY(0)";
+    });
 
+});
+
+const links = document.querySelectorAll("nav a");
+
+links.forEach(function (link) {
+
+    link.addEventListener("click", function (e) {
+
+        const target =
+            this.getAttribute("href");
+
+        if (target.startsWith("#")) {
+
+            e.preventDefault();
+
+            document
+                .querySelector(target)
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+    });
+
+});
+
+const copyright =
+    document.querySelector(".copyright");
+
+if (copyright) {
+
+    copyright.innerHTML =
+        `© ${new Date().getFullYear()} NextStop. All Rights Reserved.`;
 
 }
 
+const reportBtn =
+    document.getElementById("reportBtn");
 
-});
+if (reportBtn) {
 
+    reportBtn.addEventListener("click", function () {
 
-});
+        const message =
+            document.getElementById("issue").value;
 
-let year =
-document.querySelector(".copyright");
+        if (message.trim() === "") {
 
+            alert("Please describe the problem.");
 
-if(year){
+        } else {
 
+            alert("Thank you! Your report has been submitted.");
 
-year.innerHTML =
-`© ${new Date().getFullYear()} NextStop. All Rights Reserved.`;
+            document.getElementById("issue").value = "";
 
+        }
 
-}
-
-
-let reportButton =
-document.getElementById("reportBtn");
-
-
-if(reportButton){
-
-
-reportButton.addEventListener("click",function(){
-
-
-let message =
-document.getElementById("issue").value;
-
-
-if(message === ""){
-
-
-alert("Please describe the problem.");
-
+    });
 
 }
 
-else{
+const reviews =
+    document.querySelectorAll(".review-box");
 
+reviews.forEach(function (review) {
 
-alert("Thank you! Your report has been submitted.");
+    review.style.transition = "0.3s";
 
-document.getElementById("issue").value="";
+    review.addEventListener("mouseenter", function () {
 
+        review.style.transform = "scale(1.05)";
+
+    });
+
+    review.addEventListener("mouseleave", function () {
+
+        review.style.transform = "scale(1)";
+
+    });
+
+});
+
+$(document).ready(function () {
+
+    $("body").hide().fadeIn(1000);
+
+});
+
+$(".card").hover(
+
+    function () {
+
+        $(this).stop().animate({
+            marginTop: "-10px"
+        }, 200);
+
+    },
+
+    function () {
+
+        $(this).stop().animate({
+            marginTop: "0px"
+        }, 200);
+
+    }
+
+);
+
+$("#destinationSelect").change(function () {
+
+    let city = $(this).val();
+
+    if(city !== "Where are you going?"){
+
+        $("h1").first().text("Trips to " + city);
+
+    }else{
+
+        $("h1").first().text("Your Next Adventure Starts Here");
+
+    }
+
+});
+
+$(window).scroll(function(){
+
+    if($(this).scrollTop() > 300){
+
+        $("#topBtn").fadeIn();
+
+    }else{
+
+        $("#topBtn").fadeOut();
+
+    }
+
+});
+
+$("#topBtn").click(function(){
+
+    $("html, body").animate({
+        scrollTop:0
+    },800);
+
+});
+
+const quotes = [
+
+"Travel is the only thing you buy that makes you richer.",
+"Adventure awaits.",
+"Collect moments, not things.",
+"Life is short, see the world.",
+"Travel far enough to meet yourself."
+
+];
+
+$("#travelQuote").text(
+
+quotes[Math.floor(Math.random() * quotes.length)]
+
+);
+
+setInterval(function(){
+
+    let now = new Date();
+
+    $("#clock").text(
+        now.toLocaleTimeString()
+    );
+
+},1000);
+
+const ticket =
+    Math.floor(Math.random() * 100000);
+
+alert(
+    "Report submitted!\n\nTicket ID: #" + ticket
+);
+
+let count = 1248;
+
+const counter =
+document.getElementById("reviewCounter");
+
+if(counter){
+
+    let interval = setInterval(function(){
+
+        counter.innerText = count;
+        count++;
+
+        if(count > 1300){
+
+            clearInterval(interval);
+
+        }
+
+    },20);
 
 }
 
+const reviewBtn =
+document.getElementById("reviewBtn");
 
-});
+const feedbackBtn = document.getElementById("feedbackBtn");
 
+if (feedbackBtn) {
+
+    feedbackBtn.addEventListener("click", function () {
+
+        alert("Feedback button clicked!");
+
+        const feedback =
+            document.getElementById("feedback");
+
+        if (feedback.value.trim() === "") {
+
+            alert("Please write some feedback first.");
+            return;
+
+        }
+
+        alert("Thank you for your feedback!");
+
+        feedback.value = "";
+
+        const reviewCounter =
+            document.getElementById("reviewCounter");
+
+        if (reviewCounter) {
+
+            reviewCounter.innerText =
+                parseInt(reviewCounter.innerText) + 1;
+
+        }
+
+    });
 
 }
-
-
-let reviewBoxes =
-document.querySelectorAll(".review-box");
-
-
-reviewBoxes.forEach(function(review){
-
-
-review.addEventListener("mouseenter",function(){
-
-
-review.style.transform="scale(1.05)";
-
-
-});
-
-
-review.addEventListener("mouseleave",function(){
-
-
-review.style.transform="scale(1)";
-
-
-});
-
-
-});

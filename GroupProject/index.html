@@ -31,7 +31,7 @@
 
     <div class="trip-bar">
 
-        <select class="selections">
+        <select class="selections" id="personSelect">
             <option>Who is going?</option>
             <option>Solo</option>
             <option>Couple</option>
@@ -39,8 +39,9 @@
             <option>Friends</option>
         </select>
 
-        <select class="selections">
+        <select class="selections" id="destinationSelect">
             <option>Where are you going?</option>
+            <option>All Destinations</option>
             <option>Dubai</option>
             <option>Rome</option>
             <option>New York</option>
@@ -57,7 +58,7 @@
             <option>Vienna</option>
         </select>
 
-        <select class="selections">
+        <select class="selections" id="seasonSelect">
             <option>When are you going?</option>
             <option>Spring</option>
             <option>Summer</option>
@@ -94,123 +95,239 @@
 
     <h1>Popular Destinations</h1><br>
 
+        <h3 id="resultCount"></h3>
+        
     <div class="cards">
 
-        <div class="card">
-            <img src="images/dubai.png" alt="Dubai">
+        <div class="card" data-city="Dubai">
+            <img src="images/dubai.png" data-city="Dubai" alt="Dubai">
             <h3>Dubai</h3>
             <p>5 Days</p>
             <p>$1,200</p>
             <span>⭐ 4.8</span>
         </div>
 
-        <div class="card">
-            <img src="images/rome.png" alt="Rome">
+        <div class="card" data-city="Dubai">
+            <img src="images/dubai2.png" data-city="Dubai" alt="Dubai Luxury">
+            <h3>Dubai Luxury Experience</h3>
+            <p>7 Days</p>
+            <p>$1,850</p>
+            <span>⭐ 4.9</span>
+        </div>
+
+        <div class="card" data-city="Rome">
+            <img src="images/rome.png" data-city="Rome" alt="Rome">
             <h3>Rome</h3>
             <p>4 Days</p>
             <p>$850</p>
             <span>⭐ 4.7</span>
         </div>
 
-        <div class="card">
-            <img src="images/newyork.png" alt="New York">
+        <div class="card" data-city="New York">
+    <img src="images/newyork2.png" data-city="New York" alt="New York">
+    <h3>New York Explorer</h3>
+    <p>7 Days</p>
+    <p>$1,950</p>
+    <span>⭐ 4.8</span>
+</div>
+
+        <div class="card" data-city="New York">
+            <img src="images/newyork.png" data-city="New York" alt="New York">
             <h3>New York</h3>
             <p>6 Days</p>
             <p>$1,450</p>
             <span>⭐ 4.9</span>
         </div>
 
-        <div class="card">
-            <img src="images/tokyo.png" alt="Tokyo">
+        <div class="card" data-city="Vienna"> 
+            <img src="images/vienna2.png" data-city="Vienna" alt="Vienna Royal Experience"> 
+            <h3>Vienna Royal Experience</h3> 
+            <p>6 Days</p> 
+            <p>$1,250</p> 
+            <span>⭐ 4.9</span> 
+        </div>
+
+        <div class="card" data-city="Tokyo">
+            <img src="images/tokyo.png" data-city="Tokyo" alt="Tokyo">
             <h3>Tokyo</h3>
             <p>7 Days</p>
             <p>$1,900</p>
             <span>⭐ 4.9</span>
         </div>
 
-        <div class="card">
-            <img src="images/berlin.png" alt="Berlin">
+        <div class="card" data-city="Dubai">
+            <img src="images/dubai2.png" data-city="Dubai" alt="Dubai Luxury">
+            <h3>Dubai Luxury Experience</h3>
+            <p>7 Days</p>
+            <p>$1,850</p>
+            <span>⭐ 4.9</span>
+</div>
+
+        <div class="card" data-city="Berlin">
+            <img src="images/berlin.png" data-city="Berlin" alt="Berlin">
             <h3>Berlin</h3>
             <p>4 Days</p>
             <p>$900</p>
             <span>⭐ 4.6</span>
         </div>
 
-        <div class="card">
-            <img src="images/london.png" alt="London">
+        <div class="card" data-city="Berlin">
+            <img src="images/berlin2.png" data-city="Berlin" alt="Berlin">
+            <h3>Berlin Weekend Escape</h3>
+            <p>3 Days</p>
+            <p>$700</p>
+            <span>⭐ 4.5</span>
+        </div>
+
+        <div class="card" data-city="London">
+            <img src="images/london.png" data-city="London" alt="London">
             <h3>London</h3>
             <p>5 Days</p>
             <p>$1,300</p>
             <span>⭐ 4.8</span>
         </div>
 
-        <div class="card">
-            <img src="images/cairo.png" alt="Cairo">
+        <div class="card" data-city="Tokyo">
+            <img src="images/tokyo2.png" data-city="Tokyo" alt="Tokyo">
+            <h3>Tokyo Nightlife Experience</h3>
+            <p>5 Days</p>
+            <p>$1,550</p>
+            <span>⭐ 4.7</span>
+        </div>
+
+        <div class="card" data-city="Cairo">
+            <img src="images/cairo.png" data-city="Cairo" alt="Cairo">
             <h3>Cairo</h3>
             <p>4 Days</p>
             <p>$700</p>
             <span>⭐ 4.5</span>
         </div>
 
-        <div class="card">
-            <img src="images/barca.png" alt="Barcelona">
+        <div class="card" data-city="Rome">
+            <img src="images/rome2.png" data-city="Rome" alt="Rome">
+            <h3>Ancient Rome Explorer</h3>
+            <p>6 Days</p>
+            <p>$1,050</p>
+            <span>⭐ 4.8</span>
+        </div>
+
+        <div class="card" data-city="Barcelona">
+            <img src="images/barca.png" data-city="Barcelona" alt="Barcelona">
             <h3>Barcelona</h3>
             <p>5 Days</p>
             <p>$950</p>
             <span>⭐ 4.8</span>
         </div>
 
-        <div class="card">
-            <img src="images/bejing.png" alt="Beijing">
+        <div class="card" data-city="Dubai">
+            <img src="images/dubai2.png" data-city="Dubai" alt="Dubai Adventure">
+            <h3>Dubai Desert Adventure</h3>
+            <p>4 Days</p>
+            <p>$950</p>
+            <span>⭐ 4.7</span>
+        </div>
+
+        <div class="card" data-city="Beijing">
+            <img src="images/bejing.png" data-city="Beijing" alt="Beijing">
             <h3>Beijing</h3>
             <p>6 Days</p>
             <p>$1,500</p>
             <span>⭐ 4.7</span>
         </div>
 
-        <div class="card">
-            <img src="images/ista.png" alt="Istanbul">
+        <div class="card" data-city="Vienna"> 
+            <img src="images/vienna2.png" data-city="Vienna" alt="Vienna Classical Journey"> 
+            <h3>Vienna Classical Journey</h3> 
+            <p>5 Days</p> 
+            <p>$1,050</p> 
+            <span>⭐ 4.8</span> 
+        </div>
+
+        <div class="card" data-city="Istanbul">
+            <img src="images/ista.png" data-city="Istanbul" alt="Istanbul">
             <h3>Istanbul</h3>
             <p>5 Days</p>
             <p>$850</p>
             <span>⭐ 4.7</span>
         </div>
 
-        <div class="card">
-            <img src="images/paris.png" alt="Paris">
+        <div class="card" data-city="Tokyo">
+            <img src="images/tokyo2.png" data-city="Tokyo" alt="Tokyo">
+            <h3>Tokyo Culture Tour</h3>
+            <p>6 Days</p>
+            <p>$1,750</p>
+            <span>⭐ 4.8</span>
+        </div>
+
+        <div class="card" data-city="Paris">
+            <img src="images/paris.png" data-city="Paris" alt="Paris">
             <h3>Paris</h3>
             <p>5 Days</p>
             <p>$1,250</p>
             <span>⭐ 4.9</span>
         </div>
 
-        <div class="card">
-            <img src="images/rio.png" alt="Rio de Janeiro">
+        <div class="card" data-city="New York">
+            <img src="images/newyork2.png" data-city="New York" alt="New York">
+            <h3>NYC City Lights</h3>
+            <p>5 Days</p>
+            <p>$1,600</p>
+            <span>⭐ 4.9</span>
+        </div>
+
+        <div class="card" data-city="Rio de Janeiro">
+            <img src="images/rio.png" data-city="Rio de Janeiro" alt="Rio de Janeiro">
             <h3>Rio de Janeiro</h3>
             <p>6 Days</p>
             <p>$1,100</p>
             <span>⭐ 4.8</span>
         </div>
 
-        <div class="card">
-            <img src="images/sydney.png" alt="Sydney">
+        <div class="card" data-city="Berlin">
+            <img src="images/berlin2.png" data-city="Berlin" alt="Berlin">
+            <h3>Berlin History Experience</h3>
+            <p>5 Days</p>
+            <p>$1,050</p>
+            <span>⭐ 4.7</span>
+        </div>
+
+        <div class="card" data-city="Sydney">
+            <img src="images/sydney.png" data-city="Sydney" alt="Sydney">
             <h3>Sydney</h3>
             <p>7 Days</p>
             <p>$2,100</p>
             <span>⭐ 4.9</span>
         </div>
 
-        <div class="card">
-            <img src="images/vienna.png" alt="Vienna">
+        <div class="card" data-city="Rome">
+            <img src="images/rome2.png" data-city="Rome" alt="Rome">
+            <h3>Rome Weekend Getaway</h3>
+            <p>3 Days</p>
+            <p>$650</p>
+            <span>⭐ 4.6</span>
+        </div>
+
+        <div class="card" data-city="Vienna">
+            <img src="images/vienna.png" data-city="Vienna" alt="Vienna">
             <h3>Vienna</h3>
             <p>4 Days</p>
             <p>$900</p>
             <span>⭐ 4.7</span>
         </div>
 
+        <div class="card" data-city="Moscow">
+            <img src="images/moscow.png" data-city="Moscow" alt="Moscow">
+            <h3>Moscow</h3>
+            <p>5 Days</p>
+            <p>$1,000</p>
+            <span>⭐ 4.6</span>
+        </div>
+
     </div>
 
-</section>
+</section><br><br>
+
+<button id="topBtn">↑</button>
 
 <footer>
 
@@ -218,7 +335,8 @@
 
         <div>
             <h3>NextStop</h3>
-            <p>Discover amazing destinations and plan your perfect journey.</p>
+            <p>Discover amazing destinations and plan your perfect journey.</p><br>
+            <p id="travelQuote"></p>
         </div>
 
         <div>
@@ -231,7 +349,8 @@
         <div>
             <h3>Contact</h3>
             <p>support@nextstop.com</p>
-            <p>+383 44 000 000</p>
+            <p>+383 44 000 000</p><br>
+            <p id="clock"></p>
         </div>
 
     </div>
@@ -242,6 +361,7 @@
 
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="main.js"></script>
 
 </body>
