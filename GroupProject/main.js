@@ -293,13 +293,6 @@ setInterval(function(){
 
 },1000);
 
-const ticket =
-    Math.floor(Math.random() * 100000);
-
-alert(
-    "Report submitted!\n\nTicket ID: #" + ticket
-);
-
 let count = 1248;
 
 const counter =
@@ -322,38 +315,37 @@ if(counter){
 
 }
 
-const reviewBtn =
-document.getElementById("reviewBtn");
-
-const feedbackBtn = document.getElementById("feedbackBtn");
+const feedbackBtn =
+document.getElementById("feedbackBtn");
 
 if (feedbackBtn) {
 
     feedbackBtn.addEventListener("click", function () {
 
-        alert("Feedback button clicked!");
-
         const feedback =
-            document.getElementById("feedback");
+        document.getElementById("feedback").value;
 
-        if (feedback.value.trim() === "") {
+        if (feedback.trim() === "") {
 
-            alert("Please write some feedback first.");
-            return;
+            alert("Please write your feedback.");
 
-        }
+        } else {
 
-        alert("Thank you for your feedback!");
+            const ticket =
+            Math.floor(Math.random() * 100000);
 
-        feedback.value = "";
 
-        const reviewCounter =
+            document.getElementById("feedback").value = "";
+
+            const reviewCounter =
             document.getElementById("reviewCounter");
 
-        if (reviewCounter) {
+            if (reviewCounter) {
 
-            reviewCounter.innerText =
+                reviewCounter.innerText =
                 parseInt(reviewCounter.innerText) + 1;
+
+            }
 
         }
 
