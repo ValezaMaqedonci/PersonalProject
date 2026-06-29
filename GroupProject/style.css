@@ -759,3 +759,17 @@ footer a:hover{
 
 }
 
+.profile{
+    margin-left:20px;
+    z-index:9999;
+}
+
+.profile a{
+    display:block;
+}
+
+.profile img{
+    width:45px;
+    height:45px;
+    cursor:pointer;
+}
